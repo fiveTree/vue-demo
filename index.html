@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>vue-demo</title>
+  </head>
+  <body>
+    <div id="app">
+      <span v-bind:title="msg">悬停效果</span>
+      {{reverseMsg1}}
+      <div class="" v-if="seen">
+        if语句1{{seen}}
+      </div>
+      <div class="" v-if="hiden">
+        if语句2hiden{{!hiden}}
+      </div>
+      <ol>
+        <todo-item v-for="item in items" v-bind:item="item" v-key=""></todo-item>
+        <!-- <li >{{item}}</li> -->
+      </ol>
+      <!-- 逆转消息msg -->
+      <button type="button" name="button" v-on:click="reverseMsg">逆转消息</button>
+      <input type="text" name="" value="" v-model="msg">
+      <p>{{msg}}</p>
+    </div>
+    <script src="/dist/build.js"></script>
+  </body>
+</html>
