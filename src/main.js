@@ -14,17 +14,30 @@ var app = new Vue({
     items:[
       0,1,2,3,4,5,6,7,89,10,11
     ],
+    firstName: 'Foo',
+    lastName: 'Bar',
+    // fullName: 'Foo Bar'
   },
   methods:{
     reverseMsg:function () {
       this.msg = this.msg.split('').reverse().join('')
     }
   },
-  
+  // watch:{
+  //   firstName:function (val) {
+  //     this.fullName = val + ' ' + this.lastName
+  //   },
+  //   lastName:function (val) {
+  //     this.fullName = this.firstName + ' ' + val
+  //   }
+  // },
   computed: {
     reverseMsg1:function () {
       return this.msg.split('').reverse().join('')
     },
+    fullName:function () {
+      return this.firstName+" "+this.lastName;
+    }
   },
   beforeCreate:function () {
     console.log('beforeCreate',1)
